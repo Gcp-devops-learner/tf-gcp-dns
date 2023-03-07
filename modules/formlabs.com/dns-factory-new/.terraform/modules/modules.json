@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"address","Source":"registry.terraform.io/terraform-google-modules/address/google","Version":"3.1.2","Dir":".terraform/modules/address"}]}
