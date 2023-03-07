@@ -34,11 +34,4 @@ locals {
 
 
 
-# locals {
-#   dns_managed_zone = try(google_dns_managed_zone.dns-managed-zone[0], data.google_dns_managed_zone.dns-managed-zone[0])
-#   name = "test-dns-cloud"
-#   project_id = "formlabs-377008"
-#   region = "us-central1"
-#   fqdn = "prash.cloud."
-# }
 
