@@ -1,3 +1,7 @@
+locals {
+  dns_managed_zone = try(google_dns_managed_zone.dns-managed-zone[0], data.google_dns_managed_zone.dns-managed-zone[0])
+}
+
 # Create Domain
 resource "google_dns_managed_zone" "dns-managed-zone" {
   count = var.fqdn != "" ? 1 : 0
