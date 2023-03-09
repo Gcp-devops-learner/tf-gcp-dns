@@ -1,14 +1,34 @@
-output "external_ip" {
-  value       = module.address.addresses
-  description = "The static ip."
+output "network" {
+  value       = google_compute_network.network
+  description = "The VPC resource being created"
 }
 
-output "addresses" {
-  description = "List of address values managed by this module (e.g. [\"1.2.3.4\"])"
-  value       = module.address.addresses
+output "network_name" {
+  value       = google_compute_network.network.name
+  description = "The name of the VPC being created"
 }
 
-output "names" {
-  description = "List of address resource names managed by this module (e.g. [\"gusw1-dev-fooapp-fe-0001-a-0001-ip\"])"
-  value       = module.address.names
+output "network_id" {
+  value       = google_compute_network.network.id
+  description = "The ID of the VPC being created"
+}
+
+output "network_self_link" {
+  value       = google_compute_network.network.self_link
+  description = "The URI of the VPC being created"
+}
+
+output "project_id" {
+  value       = var.shared_vpc_host && length(google_compute_shared_vpc_host_project.shared_vpc_host) > 0 ? google_compute_shared_vpc_host_project.shared_vpc_host.*.project[0] : google_compute_network.network.project
+  description = "VPC project id"
+}
+
+output "subnets" {
+  value       = google_compute_subnetwork.subnetwork
+  description = "The created subnet resources"
+}
+
+output "routes" {
+  value       = google_compute_route.route
+  description = "The created routes resources"
 }
