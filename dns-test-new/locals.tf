@@ -40,6 +40,7 @@ locals {
     }
   ]
 
+<<<<<<< HEAD
   secondary_ranges = {
     subnet-01 = [
       {
@@ -65,5 +66,7 @@ locals {
             next_hop_instance_zone = "us-west1-a"
         }
   ]
+=======
+>>>>>>> 33721aac04a07f5608d3ed45ba7fba4472e1feaf
 
 }
